@@ -29,3 +29,11 @@ What it is: A buffer branch used to polish, test, and bug-fix a version of the s
 How strategies use it: GitFlow heavily relies on release branches to freeze features while QA tests the build. 
 
 GitHub Flow does not use release branches at all, as testing is fully automated before merging to main
+
+### Git Branching Strategy ###
+
+**Git branching** is the practice of creating isolated copies of a codebase to develop features, fix bugs, or test ideas without affecting the main production code.
+
+**4 Essential Git Branching Techniques**
+
+GitFlow: A strict, structured model featuring two long-lived branches (**main** for production, **develop** for pre-production) and temporary branches (**feature, release, hotfix**). Ideal for traditional enterprise software with scheduled release cycles.
