@@ -122,6 +122,8 @@ to see exactly what you are about to save before you commit it._**
     `=======`
     `>>>>>>>`
 
+    Talk to your teammate if you are unsure whose code is correct.Delete the lines of code you want to discard.Keep the lines of code you want to save.Delete the Git            markers (<<<<<<<, =======, >>>>>>>).
+
     -Stage the Fixed Files by running `git add <file-name>`.
 
     -Finish the Process If you were merging: `git commit -m "Fix merge conflict"` or If you were rebasing: `git rebase --continue`
