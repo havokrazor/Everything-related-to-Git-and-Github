@@ -38,6 +38,35 @@ to see exactly what you are about to save before you commit it._**
    
    - `git clone repo-link` helpes you pull the code from github and also created a link between the local and remote repo so you don't need to run
      `git remote add`.
+   - You can also do this via SSH by generating a public/private key using the `ssh keygen -t rsa` and then adding this ssh key in your github profile.
+
+8) What is the difference between `git clone` vs `git fork`?
+
+   -In simple words fork is used to create a copy of the repository and clone is used to download the repository.
+   
+   -Git Fork:
+            -Location: Happens entirely on the remote hosting service (GitHub, GitLab, Bitbucket).
+   
+            -Ownership: Creates a personal copy of someone else's project under your own account.
+   
+            -Purpose: Used to propose changes to an open-source project via a Pull Request (PR).Command: None. You click a "Fork" button on the website interface.
+   
+   -Git Clone:
+            -Location: Downloads a repository from a remote server to your local machine.
+   
+            -Ownership: Links directly back to the source repository you copied it from.
+   
+            -Purpose: Used to actually start working on the code, compile it, and run it locally.Command: Run via terminal: git clone <repository-url>.
+   
+   -In practice, you often use them together:
+   
+            -Fork a project on GitHub to get your own remote copy.
+   
+            -Clone your forked repository to your laptop to write code.
+   
+            -Push changes back to your fork.
+   
+            -Open a Pull Request to merge your changes into the original project.
 
 
 
