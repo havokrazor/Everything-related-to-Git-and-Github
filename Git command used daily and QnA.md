@@ -40,7 +40,7 @@ to see exactly what you are about to save before you commit it._**
      `git remote add`.
    - You can also do this via SSH by generating a public/private key using the `ssh keygen -t rsa` and then adding this ssh key in your github profile.
 
-8) What is the difference between `git clone` vs `git fork`?
+8) **What is the difference between `git clone` vs `git fork`?**
 
    -In simple words fork is used to create a copy of the repository and clone is used to download the repository.
    
@@ -69,13 +69,68 @@ to see exactly what you are about to save before you commit it._**
             -Open a Pull Request to merge your changes into the original project.
    
 
-   9) What is the best way to create a branch? with `git branch` or `git checkout -b`?
+9) **What is the best way to create a branch? with `git branch` or `git checkout -b`?**
        
        -The best way for most developers is `git checkout -b <branch-name>` (or the modern equivalent `git switch -c <branch-name>`).
       
        -`git checkout -b` Creates the new branch and immediately switches you to it, Saves a step and Prevents you from accidentally making commits on your main branch.
+         `git checkout branch-name` is also used to switch branches.
       
        -`git branch` Creates the new branch but leaves you sitting on your current branch. It is Good if you want to create multiple branches ahead of time without moving.
+
+10) What is `git log`?
+       -talk about git log or git log branch-name and git checkout branch-name && git log , gitlog --oneline
+
+11) Which one is better to merge the branches together? `git merge` or `git rebase` or `git cherry-pick`?
+
+   -`git merge` (The Safest & Easiest):
+       -How it works: Combines the target branch into your current branch by creating a brand-new "merge commit".
+       
+       -Best for: Finalizing a feature and bringing it into the main or production branch.
+       
+       -Pros: Preserves the true, chronological history of exactly when and how code was written. It is non-destructive.
+       
+       -Cons: Can make your Git history look messy and chaotic (a "train track" effect) if many developers merge at once.
+
+   -`git rebase` (The Cleanest History):
+       -How it works: Lifts your local commits, temporarily sets them aside, catches up to the latest target branch, and then reapplies your commits on top.
+       
+       -Best for: Keeping your own local feature branch up-to-date with main before you merge.
+       
+       -Pros: Creates a perfectly straight, linear project history that is incredibly easy to read.
+       
+       -Cons: Rewrites Git history. Never use this on public branches shared with other developers, as it can cause massive sync conflicts for your team.
+
+   -`git cherry-pick` (The Surgical Strike):
+       -How it works: Grabs a single, specific commit from any branch and copies it onto your current branch.
+       
+       -Best for: Hotfixes or undoing a mistake (e.g., you accidentally committed a bug fix to the wrong branch and want to pull just that fix over).
+       
+       -Pros: Highly precise. You don't have to bring over an entire branch just to get one piece of code. You can use `git log` copy the commit ID and merge with the               desired branch.
+       
+       -Cons: Creates duplicate commits, which can confuse Git later if you eventually try to merge the full branches.
+
+*__Note - Choose `git merge` if you are ready to merge a completed feature into the main team branch.Choose `git rebase` if you want to update your solo feature branch with the latest team changes.Choose `git cherry-pick` if you only need one specific fix out of a long list of commits.__*
+   
+12) How to handle merge conflits?
+    
+    -Find Conflicted Files using `git status` , Look for files listed under "Both modified".
+    
+    -Open and Fix the Files marked "Both modified" in your code editor. Edit the code to keep what you want and delete these Git markers:
+    
+    `<<<<<<< HEAD`
+    `=======`
+    `>>>>>>>`
+
+    -Stage the Fixed Files by running `git add <file-name>`.
+
+    -Finish the Process If you were merging: `git commit -m "Fix merge conflict"` or If you were rebasing: `git rebase --continue`
+
+    -Emergency Abort (Undo Everything) - To cancel a merge: `git merge --abort` or To cancel a rebase: `git rebase --abort`
+
+
+
+
       
 
 
