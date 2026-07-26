@@ -67,6 +67,16 @@ to see exactly what you are about to save before you commit it._**
             -Push changes back to your fork.
    
             -Open a Pull Request to merge your changes into the original project.
+   
+
+   9) What is the best way to create a branch? with `git branch` or `git checkout -b`?
+       
+       -The best way for most developers is `git checkout -b <branch-name>` (or the modern equivalent `git switch -c <branch-name>`).
+      
+       -`git checkout -b` Creates the new branch and immediately switches you to it, Saves a step and Prevents you from accidentally making commits on your main branch.
+      
+       -`git branch` Creates the new branch but leaves you sitting on your current branch. It is Good if you want to create multiple branches ahead of time without moving.
+      
 
 
 
