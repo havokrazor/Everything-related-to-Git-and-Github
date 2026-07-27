@@ -80,6 +80,13 @@ to see exactly what you are about to save before you commit it._**
 
 10) What is `git log`?
        -talk about git log or git log branch-name and git checkout branch-name && git log , gitlog --oneline
+       - `gitlog` : When run on its own without arguments, git log shows the commit history for your currently checked-out branch (where your HEAD is pointing).
+       - `git log branch-name` :This allows you to peek into another branch's history without switching branches.
+Behavior: Git prints the commit history starting from the tip of branch-name down through its parent commits.
+Why use it? You save time and context-switching overhead. If you are currently on main and want to check what your teammate committed on feature-login, you don't need to leave main
+       - `git checkout branch-name && git log` : This is a two-step sequence using the && operator (which only runs the second command if the first succeeds):
+git checkout branch-name: Changes your active branch (updates HEAD and replaces the files in your working directory to match branch-name).
+git log: Displays the log for that newly checked-out branch.
 
 11) Which one is better to merge the branches together? `git merge` or `git rebase` or `git cherry-pick`?
 
